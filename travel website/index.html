@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel website</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <!--Bootstap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
+    <!--about us-->
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/heroes/">
+
+    
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+
+<link href="/docs/5.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+    <!-- Favicons -->
+<link rel="apple-touch-icon" href="/docs/5.3/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+<link rel="icon" href="/docs/5.3/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/docs/5.3/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="manifest" href="/docs/5.3/assets/img/favicons/manifest.json">
+<link rel="mask-icon" href="/docs/5.3/assets/img/favicons/safari-pinned-tab.svg" color="#712cf9">
+<link rel="icon" href="/docs/5.3/assets/img/favicons/favicon.ico">
+<meta name="theme-color" content="#712cf9">
+
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (max-width: 768px) {
+    .et-slide .col-lg-7 {
+      order: 2;
+    }
+
+    .et-slide .col-lg-4 {
+      order: 1;
+      margin-top: 20px;
+    }
+    .et-hero-tab {
+    font-size: 14px;
+  }
+
+  .et-slide .col-lg-7 {
+    order: 2;
+  }
+
+  .et-slide .col-lg-4 {
+    order: 1;
+    margin-top: 20px;
+  }
+
+  .card {
+    width: calc(50% - 30px);
+  }
+  }
+
+      .b-example-divider {
+        width: 100%;
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .btn-bd-primary {
+        --bd-violet-bg: #712cf9;
+        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+        --bs-btn-font-weight: 600;
+        --bs-btn-color: var(--bs-white);
+        --bs-btn-bg: var(--bd-violet-bg);
+        --bs-btn-border-color: var(--bd-violet-bg);
+        --bs-btn-hover-color: var(--bs-white);
+        --bs-btn-hover-bg: #6528e0;
+        --bs-btn-hover-border-color: #6528e0;
+        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+        --bs-btn-active-color: var(--bs-btn-hover-color);
+        --bs-btn-active-bg: #5a23c8;
+        --bs-btn-active-border-color: #5a23c8;
+      }
+      .bd-mode-toggle {
+        z-index: 1500;
+      }
+      
+    .des-container {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  margin-top: 200px;
+  
+}
+
+.des-container{
+  background: #1f2229;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
+
+.card {
+  position: relative;
+  height: calc(100% - 30px);
+  width: calc(33.333% - 30px);
+  background: #fff;
+  overflow: hidden;
+  float: left;
+  margin: 15px;
+}
+.card__content {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background: #fff;
+  top: calc(100% - 80px);
+  left: 0;
+  opacity: 1;
+  transition: all 0.75s ease-in-out;
+  display: flex;
+  align-items: top;
+  justify-content: center;
+}
+.card__content-inner {
+  position: relative;
+  display: block;
+  height: 80px;
+  display: flex;
+  flex-flow: column nowrap;
+  text-align: center;
+  justify-content: center;
+  transition: all 0.75s ease-in-out;
+}
+.card__content:after {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 30px;
+  height: 30px;
+  border-color: #fff;
+  border-style: solid;
+  border-width: 2px 0 0 2px;
+  content: "";
+}
+.card__title {
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #fff;
+  letter-spacing: 1px;
+}
+.card__description {
+  color: #eee;
+}
+.card:after {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  border-color: #fff;
+  border-style: solid;
+  border-width: 0 2px 2px 0;
+  content: "";
+}
+.card.a100, .card:hover {
+  cursor: pointer;
+}
+.card.a100 .card__content, .card:hover .card__content {
+  top: 0;
+  background:#eee;
+  transition: all 1s ease-in-out;
+}
+.card.a100 .card__content-inner, .card:hover .card__content-inner {
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  transition: all 1s ease-in-out;
+}
+.card.a50 .card__content {
+  top: 50%;
+}
+.card.a50 .card__content-inner {
+  height: 50%;
+}
+.card.a50:hover .card__content {
+  top: 0;
+}
+.card.a50:hover .card__content-inner {
+  height: 100%;
+}
+.card.a100:hover .card__content {
+  top: calc(100% - 80px);
+}
+.card.a100:hover .card__content-inner {
+  height: 80px;
+}
+
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="heroes.css" rel="stylesheet">
+
+
+<!--Booking-->
+<link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/jumbotrons/">
+
+    
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+
+<link href="/docs/5.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" href="/docs/5.3/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+<link rel="icon" href="/docs/5.3/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/docs/5.3/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="manifest" href="/docs/5.3/assets/img/favicons/manifest.json">
+<link rel="mask-icon" href="/docs/5.3/assets/img/favicons/safari-pinned-tab.svg" color="#712cf9">
+<link rel="icon" href="/docs/5.3/assets/img/favicons/favicon.ico">
+<meta name="theme-color" content="#712cf9">
+
+
+<style>
+  .bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+
+  @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+  }
+
+  .b-example-divider {
+    width: 100%;
+    height: 3rem;
+    background-color: rgba(0, 0, 0, .1);
+    border: solid rgba(0, 0, 0, .15);
+    border-width: 1px 0;
+    box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+  }
+
+  .b-example-vr {
+    flex-shrink: 0;
+    width: 1.5rem;
+    height: 100vh;
+  }
+
+  .bi {
+    vertical-align: -.125em;
+    fill: currentColor;
+  }
+
+  .nav-scroller {
+    position: relative;
+    z-index: 2;
+    height: 2.75rem;
+    overflow-y: hidden;
+  }
+
+  .nav-scroller .nav {
+    display: flex;
+    flex-wrap: nowrap;
+    padding-bottom: 1rem;
+    margin-top: -1px;
+    overflow-x: auto;
+    text-align: center;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .btn-bd-primary {
+    --bd-violet-bg: #712cf9;
+    --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+    --bs-btn-font-weight: 600;
+    --bs-btn-color: var(--bs-white);
+    --bs-btn-bg: var(--bd-violet-bg);
+    --bs-btn-border-color: var(--bd-violet-bg);
+    --bs-btn-hover-color: var(--bs-white);
+    --bs-btn-hover-bg: #6528e0;
+    --bs-btn-hover-border-color: #6528e0;
+    --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+    --bs-btn-active-color: var(--bs-btn-hover-color);
+    --bs-btn-active-bg: #5a23c8;
+    --bs-btn-active-border-color: #5a23c8;
+  }
+  .bd-mode-toggle {
+    z-index: 1500;
+  }
+  @media (max-width: 576px) {
+  .et-hero-tabs h1 {
+    font-size: 20px;
+  }
+
+  .et-hero-tabs h3 {
+    font-size: 14px;
+  }
+
+  .et-hero-tabs .et-hero-tab {
+    font-size: 10px;
+  }
+
+  .card__title {
+    font-size: 24px;
+  }
+
+  .card__description {
+    font-size: 12px;
+  }
+
+  .content-box {
+    font-size: 14px;
+  }
+
+  .contactus-head {
+    font-size: 18px;
+  }
+
+  .contactus-subhead {
+    font-size: 14px;
+  }
+
+  .input {
+    font-size: 12px;
+  }
+
+  .textinput {
+    font-size: 12px;
+  }
+
+  .submit-btn {
+    font-size: 14px;
+  }
+}
+</style>
+
+
+<!-- Custom styles for this template -->
+<link href="jumbotrons.css" rel="stylesheet">
+
+<!--travel tipe-->
+<link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/blog/">
+
+    
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+
+<link href="/docs/5.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" href="/docs/5.3/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+<link rel="icon" href="/docs/5.3/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/docs/5.3/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="manifest" href="/docs/5.3/assets/img/favicons/manifest.json">
+<link rel="mask-icon" href="/docs/5.3/assets/img/favicons/safari-pinned-tab.svg" color="#712cf9">
+<link rel="icon" href="/docs/5.3/assets/img/favicons/favicon.ico">
+<meta name="theme-color" content="#712cf9">
+
+
+<style>
+  .bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+
+  @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+  }
+
+  .b-example-divider {
+    width: 100%;
+    height: 3rem;
+    background-color: rgba(0, 0, 0, .1);
+    border: solid rgba(0, 0, 0, .15);
+    border-width: 1px 0;
+    box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+  }
+
+  .b-example-vr {
+    flex-shrink: 0;
+    width: 1.5rem;
+    height: 100vh;
+  }
+
+  .bi {
+    vertical-align: -.125em;
+    fill: currentColor;
+  }
+
+  .nav-scroller {
+    position: relative;
+    z-index: 2;
+    height: 2.75rem;
+    overflow-y: hidden;
+  }
+
+  .nav-scroller .nav {
+    display: flex;
+    flex-wrap: nowrap;
+    padding-bottom: 1rem;
+    margin-top: -1px;
+    overflow-x: auto;
+    text-align: center;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .btn-bd-primary {
+    --bd-violet-bg: #712cf9;
+    --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+    --bs-btn-font-weight: 600;
+    --bs-btn-color: var(--bs-white);
+    --bs-btn-bg: var(--bd-violet-bg);
+    --bs-btn-border-color: var(--bd-violet-bg);
+    --bs-btn-hover-color: var(--bs-white);
+    --bs-btn-hover-bg: #6528e0;
+    --bs-btn-hover-border-color: #6528e0;
+    --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+    --bs-btn-active-color: var(--bs-btn-hover-color);
+    --bs-btn-active-bg: #5a23c8;
+    --bs-btn-active-border-color: #5a23c8;
+  }
+  .bd-mode-toggle {
+    z-index: 1500;
+  }
+</style>
+
+
+<!-- Custom styles for this template -->
+<link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900&amp;display=swap" rel="stylesheet">
+<!-- Custom styles for this template -->
+<link href="blog.css" rel="stylesheet">
+
+
+</head>
+<body>
+
+  <!--about us-->
+  
+
+
+     <!-- Hero -->
+  <section class="et-hero-tabs" style="background-image: url('./Earthy.png'); background-size: cover; background-position: center center; background-repeat: no-repeat;">
+    <img src="./Travel_App-removebg-preview.png" height="200" width="300" class="logo-top" alt="" srcset="">
+    <h1>Your adventure, our expertise</h1>
+    <h3>“Life is short and the world is wide, the sooner you start exploring it, the better.”</h3>
+    <div class="et-hero-tabs-container">
+      <a class="et-hero-tab" href="#tab-es6">About Us</a>
+      <a class="et-hero-tab" href="#tab-flexbox">Destinations</a>
+      <a class="et-hero-tab" href="#tab-react">Travel Tips</a>
+      <a class="et-hero-tab" href="#tab-angular">Booking</a>
+      <a class="et-hero-tab" href="#tab-other">Contact Us</a>
+      <span class="et-hero-tab-slider"></span>
+    </div>
+  </section>
+
+  <!-- Main -->
+  <main class="et-main">
+    <div class="b-example-divider"></div>
+<section class="et-slide" id="tab-es6">
+  <div class="container my-5" style="transition: scale(0.8);">
+    <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
+      <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
+        <h2 class="display-4 fw-bold lh-1 text-body-emphasis">About Us</h2>
+        <p class="lead">Welcome to Whizgo, your ultimate gateway to unforgettable travel experiences. At Whizgo, we're not just about booking trips; we're about creating journeys that leave you with cherished memories and stories to share. Our passion for travel fuels our commitment to delivering exceptional service and inspiring wanderlust in every adventurer. Discover a world of possibilities with Whizgo. We specialize in crafting personalized itineraries that reflect your interests, preferences, and aspirations.</p>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
+        </div>
+      </div>
+      <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg">
+        <img class="rounded-lg-3" src="./pexels-francesco-ungaro-2325446.jpg" alt="" width="720">
+      </div>
+    </div>
+  </div>
+</section>
+<section class="et-slide" id="tab-flexbox">
+  <div class="des-container">
+    <a href="./paris.html">
+      <div class="card" style="background-image: url('./paris.png'); background-size: cover; background-position: center center; background-repeat: no-repeat; " >
+      <div class="card__content" style="background-image: url('./paris2.png'); background-repeat: no-repeat; background-size: cover;" >
+        <div class="card__content-inner" >
+          <div class="card__title" style="font-size: 50px;">PARIS</div>
+          <div class="card__description">"City Of Lights"...</div>
+        </div>
+      </div>
+    </div></a>
+    <div class="card a50" style="background-image: url('./maldives1.png'); background-size: cover; background-position: center center; background-repeat: no-repeat; ">
+      <div class="card__content" style="background-image: url('./maldives2.png'); background-repeat: no-repeat; background-size: cover;">
+        <div class="card__content-inner">
+          <div class="card__title" style="font-size: 50px;">MALDIVES</div>
+          <div class="card__description" style="color: #000;">"A Tropical Heven for Honeymooners"..</div>
+        </div>
+      </div>
+    </div>
+    <div class="card a100" style="background-image: url('./greece1.png'); background-size: cover; background-position: center center; background-repeat: no-repeat; ">
+      <div class="card__content" style="background-image: url('./greece2.png'); background-repeat: no-repeat; background-size: cover;">
+        <div class="card__content-inner">
+          <div class="card__title" style="font-size: 30px;">SANTORINI,GREECE</div>
+          <div class="card__description" style="color: #000;">"Stunning sunsets and breathtaking views".</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </section>
+  <div class="b-example-divider"></div>
+    <section class="et-slide" id="tab-react">
+      
+<div class="row mb-2">
+  <div class="col-md-6">
+    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+      <div class="col p-4 d-flex flex-column position-static">
+        <strong class="d-inline-block mb-2 text-primary-emphasis">Pack light and Smart</strong>
+        <b><p class="card-text mb-auto">Suggest versatile clothing items that can be mixed and matched.</p>
+          <div class="card-text mb-auto">Encourage travelers to pack only the essentials to avoid overloading their luggage</div>
+          <p class="card-text mb-auto">Emphasize the importance of packing based on the destination's weather and activities.</p></b>
+        
+      </div>
+      <div class="col-auto d-none d-lg-block">
+        <img src="./pexels-vlada-karpovich-7365300.jpg" width="200" height="250" alt="" srcset="">
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+      <div class="col p-4 d-flex flex-column position-static">
+        <strong class="d-inline-block mb-2 text-primary-emphasis">Travel Documents & safety</strong>
+        <b><p class="card-text mb-auto">Advise on using a money belt or hidden pouch to safeguard valuables while exploring.</p>
+          <div class="card-text mb-auto">Remind travelers to double-check their passports, visas, and necessary permits well before departure.</div>
+          <p class="card-text mb-auto">Stress the importance of making copies of important documents and separate from the originals.
+          </p></b>
+      </div>
+      <div class="col-auto d-none d-lg-block">
+        <img src="./pexels-ketut-subiyanto-4559555.jpg" width="200" height="270" alt="" srcset="">
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row mb-2">
+  <div class="col-md-6">
+    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+      <div class="col p-4 d-flex flex-column position-static">
+        <strong class="d-inline-block mb-2 text-primary-emphasis">Health and Wellness</strong>
+        <b><p class="card-text mb-auto">Encourage travelers to stay hydrated, especially during long flights.</p>
+          <div class="card-text mb-auto">Highlight the importance of travel insurance to cover unexpected medical expenses and trip cancellations.</div>
+          <p class="card-text mb-auto">Recommend carrying a basic first-aid kit with essentials like bandaids, pain relievers, and any necessary medications</p></b>
+      </div>
+      <div class="col-auto d-none d-lg-block">
+        <img src="./pexels-nataliya-vaitkevich-6942034.jpg" width="200" height="270" alt="" srcset="">
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+      <div class="col p-4 d-flex flex-column position-static">
+        <strong class="d-inline-block mb-2 text-primary-emphasis">Money Management</strong>
+        <b><p class="card-text mb-auto">Advise travelers to carry a mix of payment methods.</p>
+          <div class="card-text mb-auto">Recommend exchanging some currency before arriving at the destination to cover initial expenses.</div>
+          <p class="card-text mb-auto">Stress the importance of notifying their bank about their travel plans to prevent card issues while abroad.</p></b>
+      </div>
+      <div class="col-auto d-none d-lg-block">
+        <img src="./pexels-karolina-grabowska-4386366.jpg" width="200" height="270" alt="" srcset="">
+      </div>
+    </div>
+  </div>
+</div>
+    </section>
+    <div class="b-example-divider"></div>
+    <section class="et-slide" id="tab-angular">
+      <div class="container my-5">
+        <div class="position-relative p-5 text-center text-muted bg-body border border-dashed rounded-5">
+          <button type="button" class="position-absolute top-0 end-0 p-3 m-3 btn-close bg-secondary bg-opacity-10 rounded-pill" aria-label="Close"></button>
+          <img src="./Travel_App-removebg-preview.png" width="200" height="150" alt="">
+          <h2 class="text-body-emphasis">Welcome to WhizGo - Your Gateway to Adventure!</h2>
+          <p class="col-lg-6 mx-auto mb-4" style="font-size: 20px;">
+            Start your journey by booking your dream adventure with WhizGo. Whether you're a solo traveler, a couple seeking a romantic getaway, or a family in search of unforgettable memories, we have the perfect destinations and experiences waiting for you.
+          </p>
+          <button class="btn btn-primary px-5 mb-5" type="button">
+            Book Now
+          </button>
+        </div>
+      </div>
+    </section>
+    <!--contact form-->
+    <section class="et-slide" id="tab-other" style="margin-bottom: 100px; margin-top: 50px;">
+      <div class="landing_page">
+        <div class="responsive-container-block big-container">
+          <img class="bg-img" id="iq5bf" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/clothes-bg.png">
+          <div class="responsive-container-block container">
+            <div class="responsive-cell-block wk-desk-6 wk-ipadp-6 wk-tab-12 wk-mobile-12 left-one">
+              <div class="content-box">
+                <p class="text-blk section-head">
+                  Lorem ipsum amet dolor
+                </p>
+                <p class="text-blk section-subhead">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis volupta
+                </p>
+                <div class="icons-container">
+                  <a class="share-icon">
+                    <img class="img" src="https://workik-widget-assets.s3.amazonaws.com/Footer1-83/v1/images/Icon-twitter.png">
+                  </a>
+                  <a class="share-icon">
+                    <img class="img" src="https://workik-widget-assets.s3.amazonaws.com/Footer1-83/v1/images/Icon-facebook.png">
+                  </a>
+                  <a class="share-icon">
+                    <img class="img" src="https://workik-widget-assets.s3.amazonaws.com/Footer1-83/v1/images/Icon-google.png">
+                  </a>
+                  <a class="share-icon">
+                    <img class="img" src="https://workik-widget-assets.s3.amazonaws.com/Footer1-83/v1/images/Icon-instagram.png">
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="responsive-cell-block wk-ipadp-6 wk-tab-12 wk-mobile-12 wk-desk-6 right-one" id="i1zj">
+              <form class="form-box">
+                <div class="container-block form-wrapper">
+                  <p class="text-blk contactus-head">
+                    <a class="link" href="">
+                    </a>
+                    Get a quote
+                  </p>
+                  <p class="text-blk contactus-subhead">
+                    We will get back to you in 24 hours
+                  </p>
+                  <div class="responsive-container-block">
+                    <div class="responsive-cell-block wk-tab-12 wk-mobile-12 wk-desk-12 wk-ipadp-12" id="i10mt-7">
+                      <input class="input" id="ijowk-7" name="FirstName" placeholder="First Name">
+                    </div>
+                    <div class="responsive-cell-block wk-tab-12 wk-mobile-12 wk-desk-12 wk-ipadp-12" id="i1ro7">
+                      <input class="input" id="indfi-5" name="Last Name" placeholder="Last Name">
+                    </div>
+                    <div class="responsive-cell-block wk-tab-12 wk-mobile-12 wk-desk-6 wk-ipadp-6 emial" id="ityct">
+                      <input class="input" id="ipmgh-7" name="Email" placeholder="Email">
+                    </div>
+                    <div class="responsive-cell-block wk-desk-6 wk-ipadp-6 wk-tab-12 wk-mobile-12">
+                      <input class="input" id="imgis-6" name="PhoneNumber" placeholder="Phone Number">
+                    </div>
+                    <div class="responsive-cell-block wk-tab-12 wk-mobile-12 wk-desk-12 wk-ipadp-12" id="i634i-7">
+                      <textarea aria-placeholder="Type message here" class="textinput" id="i5vyy-7" placeholder="Type message here"></textarea>
+                    </div>
+                  </div>
+                  <button class="submit-btn">
+                    Get quote
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </section>
+    
+  </main>
+    
+  <script src="script.js"></script>
+ 
+</body>
+</html>
